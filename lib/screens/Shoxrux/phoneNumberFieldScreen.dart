@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/phoneFormat.dart';
+import '../../utils/Shoxrux/phoneFormat.dart';
 
 class PhoneNumberFieldScreen extends StatefulWidget {
   const PhoneNumberFieldScreen({Key? key}) : super(key: key);
