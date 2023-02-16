@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/Azimjon/screen_pin_code.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: Placeholder(),
+      home: const PinCodeScreen(),
     );
   }
 }
