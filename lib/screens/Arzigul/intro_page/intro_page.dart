@@ -15,23 +15,23 @@ class _IntroPageState extends State<IntroPage> {
   var introData = List.of({
     IntroModel(
         title: "Virtual karta oching!",
-        icon: "assets/images/ic_order_virtual_card.png",
+        icon: "assets/Arzigul/images/ic_order_virtual_card.png",
         text: "Identifikatsiyadan o'ting va ilovamiz orqali qisqa muddatda "
             "VISA va HUMO virtual kartalariga ega bo'ling.\n\nVISA Virtual - Online to'lovlar va konversiya operatsiyalarini "
             "amalga oshirish uchun cheksiz imkoniyat. 3D-secure xizmati avtomatik ravishda faollashtiriladi.\n\n"
             "HUMO Virtual - Oddiy va xavfsiz online to'lovlar hamda HUMOPay xizmati orqali kontaktsiz to'lov imkoniyati."),
     IntroModel(
         title: "OTM shartnoma to'lovi",
-        icon: "assets/images/intro_woman.png",
+        icon: "assets/Arzigul/images/intro_woman.png",
         text: "ZOOMRAD ilovasida O'zbekiston oliy ta'lim muassasalari "
             "shartnoma to'lovlarini oson va komissiyasiz amalga oshiring. Buning uchun siz talabaning faqat JSHSHIR (PINFL) "
             "raqamini kiritishingiz kerak va ilovaning o'zi talaba va shartnoma bo'yicha qarzdorlik haqida ma'lumot topadi."),
     IntroModel(
         title: "Onlayn davlat xizmatlari",
-        icon: "assets/images/ic_my_gov_white.png",
+        icon: "assets/Arzigul/images/ic_my_gov_white.png",
         text: "Identifikatsiyadan o'ting va davlat xizmatlaridan "
             "onlayn tarzda bepul doydalaning."),
-    IntroModel(title: "VISA Direct", icon: "assets/images/icon_visa_direct.png", text: "VISA kartalari orqali xalqaro pul o'tkazmalari."),
+    IntroModel(title: "VISA Direct", icon: "assets/Arzigul/images/icon_visa_direct.png", text: "VISA kartalari orqali xalqaro pul o'tkazmalari."),
   });
 
   final pageController = PageController();
