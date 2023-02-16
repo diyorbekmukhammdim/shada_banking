@@ -32,7 +32,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(height: 10),
-            Center(child: SizedBox(width: 180, height: 180, child: Image.asset("assets/notify_icon.png"))),
+            Center(child: SizedBox(width: 180, height: 180, child: Image.asset("assets/images/logo_light.png"))),
             const Center(
               child: Text(
                 "4 xonali Pin-kod yarating",
