@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shada_banking/screens/Azimjon/screen_pin_code.dart';
+import 'package:shada_banking/screens/Shoxrux/languageScreen.dart';
+import 'package:shada_banking/screens/Shoxrux/phoneNumberFieldScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const PinCodeScreen(),
+      home: const PhoneNumberFieldScreen(),
     );
   }
 }
