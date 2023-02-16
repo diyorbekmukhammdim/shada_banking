@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shada_banking/screens/Arzigul/intro_page/intro_page.dart';
-import 'package:shada_banking/screens/Azimjon/screen_pin_code.dart';
-import 'package:shada_banking/screens/Shoxrux/languageScreen.dart';
-import 'package:shada_banking/screens/Shoxrux/phoneNumberFieldScreen.dart';
+import 'package:shada_banking/screens/auth/intro_page/intro_page.dart';
 
 void main() {
   runApp(const MyApp());

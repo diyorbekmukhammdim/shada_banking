@@ -13,7 +13,7 @@ class _LogoState extends State<Logo> {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "assets/Arzigul/images/logo.png",
+      "assets/images/logo.png",
       width: 200,
       height: 200,
     );

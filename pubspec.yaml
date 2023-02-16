@@ -26,6 +26,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/Azimjon/images/
-    - assets/Arzigul/images/
-    - assets/Arzigul/lottie/
+    - assets/images/
+    - assets/lottie/

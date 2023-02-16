@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../screens/Arzigul/model/intro_model.dart';
-
-
+import '../../screens/auth/intro_page/model/intro_model.dart';
 
 class PagerItem extends StatelessWidget {
   final IntroModel model;
@@ -20,19 +18,27 @@ class PagerItem extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Color(0xFF17A39A), Color(0xFF22AF7B), Color(0xFF17A369)])),
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Color(0xFF17A39A),
+                  Color(0xFF22AF7B),
+                  Color(0xFF17A369)
+                ])),
           ),
         ),
         Positioned(
           top: 0,
           right: 0,
           left: 0,
-          child: Image.asset("assets/Arzigul/images/landing_bg.png", fit: BoxFit.fill),
+          child: Image.asset("assets/images/landing_bg.png",
+              fit: BoxFit.fill),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(model.title, style: const TextStyle(color: Colors.white, fontSize: 24)),
+            Text(model.title,
+                style: const TextStyle(color: Colors.white, fontSize: 24)),
             const SizedBox(height: 70),
             Image.asset(
               model.icon,
@@ -43,8 +49,14 @@ class PagerItem extends StatelessWidget {
             const SizedBox(height: 70),
             Container(
                 margin: const EdgeInsets.symmetric(horizontal: 30),
-                child: Text(model.text, style: const TextStyle(color: Colors.white, fontSize: 18, ), textAlign: TextAlign.center,)
-            ),
+                child: Text(
+                  model.text,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.center,
+                )),
             const SizedBox(height: 30),
           ],
         ),

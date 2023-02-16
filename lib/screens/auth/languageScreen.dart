@@ -21,7 +21,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
           const Center(
               child: Image(
                   width: 100,
-                  image: AssetImage("assets/Azimjon/images/logo_light.png"))),
+                  image: AssetImage("assets/images/logo_light.png"))),
           const SizedBox(
             height: 20,
           ),

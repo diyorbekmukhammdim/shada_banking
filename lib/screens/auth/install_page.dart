@@ -17,7 +17,7 @@ class _InstallPageState extends State<InstallPage> {
         color: Colors.white,
         width: double.infinity,
         height: double.infinity,
-        child: Lottie.asset("assets/Arzigul/lottie/splash_white.json"),
+        child: Lottie.asset("assets/lottie/splash_white.json"),
       ),
     );
   }

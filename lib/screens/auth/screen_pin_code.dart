@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../widgets/Azimjon/indecator_dot.dart';
-import '../../widgets/Azimjon/keyboard.dart';
+import '../../widgets/auth/indecator_dot.dart';
+import '../../widgets/auth/keyboard.dart';
 
 /// Creator : Azimjon Makhmudov
 /// Date : 2/16/2023 Time : 19:22
 /// Project : shada_banking
-/// Package : lib/screens/Azimjon
+/// Package : lib/screens
 
 class PinCodeScreen extends StatefulWidget {
   const PinCodeScreen({Key? key}) : super(key: key);
@@ -32,11 +31,19 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(height: 10),
-            Center(child: SizedBox(width: 180, height: 180, child: Image.asset("assets/Azimjon/images/logo_light.png"))),
+            Center(
+                child: SizedBox(
+                    width: 180,
+                    height: 180,
+                    child:
+                        Image.asset("assets/images/logo_light.png"))),
             const Center(
               child: Text(
                 "4 xonali Pin-kod yarating",
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
               ),
             ),
             Row(
