@@ -18,6 +18,7 @@ class AppKeyboard extends StatefulWidget {
 
 class _AppKeyboardState extends State<AppKeyboard> {
   String text = "";
+  static const double buttonSize = 120;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class _AppKeyboardState extends State<AppKeyboard> {
           children: [
             keyboardButton(""),
             keyboardButton("0"),
-            keyboardButton("<"),
+            keyboardButtonIcon(),
           ],
         ),
       ],
@@ -62,20 +63,14 @@ class _AppKeyboardState extends State<AppKeyboard> {
   Widget keyboardButton(String element) {
     if (element.isEmpty) {
       return const SizedBox(
-        width: 120,
-        height: 120,
+        width: buttonSize,
+        height: buttonSize,
       );
     } else {
       return InkWell(
         onTap: () {
-          if (element == "<") {
-            if (text.isNotEmpty) {
-              text = text.substring(0, text.length - 1);
-            }
-          } else {
-            if (text.length < 4) {
-              text += element;
-            }
+          if (text.length < 4) {
+            text += element;
           }
           widget.stringValue(text);
         },
@@ -83,8 +78,8 @@ class _AppKeyboardState extends State<AppKeyboard> {
           borderRadius: BorderRadius.circular(90),
         ),
         child: SizedBox(
-          width: 100,
-          height: 100,
+          width: buttonSize,
+          height: buttonSize,
           child: Center(
             child: Text(
               element,
@@ -94,5 +89,26 @@ class _AppKeyboardState extends State<AppKeyboard> {
         ),
       );
     }
+  }
+
+  Widget keyboardButtonIcon() {
+    return InkWell(
+      onTap: () {
+        if (text.isNotEmpty) {
+          text = text.substring(0, text.length - 1);
+        }
+        widget.stringValue(text);
+      },
+      customBorder: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(90),
+      ),
+      child: const SizedBox(
+        width: buttonSize,
+        height: buttonSize,
+        child: Center(
+          child: Icon(Icons.backspace_rounded),
+        ),
+      ),
+    );
   }
 }
