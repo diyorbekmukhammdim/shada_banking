@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shada_banking/screens/auth/intro_page/model/payment_model.dart';
+import 'package:shada_banking/screens/payment/model/payment_model.dart';
 import 'package:shada_banking/widgets/payment/payment_item.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -82,7 +82,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       mainAxisSpacing: 20),
                   itemCount: _list.length,
                   itemBuilder: (BuildContext ctx, index) {
-                    return PaymentGrid(_list[index]);
+                    return PaymentItem(_list[index]);
                   })),
         ],
       ),
