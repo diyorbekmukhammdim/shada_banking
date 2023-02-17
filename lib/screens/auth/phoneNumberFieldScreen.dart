@@ -67,7 +67,6 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                 ),
                 const SizedBox(height: 20),
                 ButtonAuth("Kodni yuoborish", true, () {
-                  print("object");
                   Navigator.push(context,  MaterialPageRoute(builder: (context) => const SmsVerificationScreen()));
                 }),
                 Flexible(flex: 2, child: Column()),

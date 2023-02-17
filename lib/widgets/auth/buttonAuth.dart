@@ -12,7 +12,7 @@ class ButtonAuth extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (enabled) {
-          onTap;
+          onTap();
         }
       },
       child: Container(
