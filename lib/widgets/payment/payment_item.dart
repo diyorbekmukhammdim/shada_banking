@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../screens/auth/intro_page/model/payment_model.dart';
+import '../../screens/payment/model/payment_model.dart';
 
-class PaymentGrid extends StatelessWidget {
+class PaymentItem extends StatelessWidget {
   final PaymentsModel _paymentsModel;
   final iconsColor = const Color.fromARGB(255, 58, 172, 136);
 
-  const PaymentGrid(this._paymentsModel, {super.key});
+  const PaymentItem(this._paymentsModel, {super.key});
 
   @override
   Widget build(BuildContext context) {
