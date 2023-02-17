@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shada_banking/screens/auth/install_page.dart';
+import 'package:shada_banking/screens/auth/screen_new_pin_code.dart';
+import 'package:shada_banking/screens/auth/screen_pin_code.dart';
 import 'package:shada_banking/screens/payment/payment_page.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const PaymentPage(),
+      home:  PinCodeScreen(),
     );
   }
 }
