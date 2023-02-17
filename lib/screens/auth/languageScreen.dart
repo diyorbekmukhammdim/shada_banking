@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LanguageScreen extends StatefulWidget {
+  static const routes = "Language";
   const LanguageScreen({Key? key}) : super(key: key);
 
   @override
