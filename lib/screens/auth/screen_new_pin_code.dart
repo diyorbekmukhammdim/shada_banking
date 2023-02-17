@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:shada_banking/widgets/auth/indecator_dot.dart';
-import 'package:shada_banking/widgets/auth/keyboard.dart';
+import '../../widgets/auth/indecator_dot.dart';
+import '../../widgets/auth/keyboard.dart';
 
 /// Creator : Azimjon Makhmudov
-/// Date : 2/17/2023 Time : 17:21
+/// Date : 2/16/2023 Time : 19:22
 /// Project : shada_banking
-/// Package : lib/screens/auth
+/// Package : lib/screens
 
-class PinCodeScreen extends StatefulWidget {
-  const PinCodeScreen({Key? key}) : super(key: key);
+class NewPinCodeScreen extends StatefulWidget {
+  const NewPinCodeScreen({Key? key}) : super(key: key);
 
   @override
-  State<PinCodeScreen> createState() => _PinCodeScreenState();
+  State<NewPinCodeScreen> createState() => _NewPinCodeScreenState();
 }
 
-class _PinCodeScreenState extends State<PinCodeScreen> {
+class _NewPinCodeScreenState extends State<NewPinCodeScreen> {
   String _pinCode = "";
   late final Function(String element) onTap;
 
@@ -31,11 +31,19 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const SizedBox(height: 10),
-            Center(child: SizedBox(width: 145, height: 145, child: Image.asset("assets/images/logo_light.png"))),
+            Center(
+                child: SizedBox(
+                    width: 145,
+                    height: 145,
+                    child:
+                        Image.asset("assets/images/logo_light.png"))),
             const Center(
               child: Text(
-                "PIN kiriting",
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                "4 xonali Pin-kod yarating",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
               ),
             ),
             Row(
@@ -46,17 +54,6 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
                 pinCodeDot(_pinCode.length >= 3),
                 pinCodeDot(_pinCode.length >= 4),
               ],
-            ),
-            GestureDetector(
-              onTap: () {
-                print("click  PIN qayta o'rnatish"); //TODO
-              },
-              child: const Center(
-                child: Text(
-                  "PIN qayta o'rnatish",
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16, decoration: TextDecoration.underline),
-                ),
-              ),
             ),
             AppKeyboard(stringValue: (value) {
               setState(() {});
