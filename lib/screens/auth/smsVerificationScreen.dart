@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shada_banking/screens/auth/screen_new_pin_code.dart';
 
 import '../../widgets/auth/buttonAuth.dart';
 
@@ -62,7 +63,7 @@ class _SmsVerificationScreenState extends State<SmsVerificationScreen> {
               const Center(
                   child: Image(
                       width: 100,
-                      image: AssetImage("assets/image/notify_icon.png"))),
+                      image: AssetImage("assets/images/logo.png"))),
               const SizedBox(
                 height: 60,
               ),
@@ -132,7 +133,7 @@ class _SmsVerificationScreenState extends State<SmsVerificationScreen> {
                             child: Image(
                                 width: 20,
                                 image:
-                                    AssetImage("assets/image/phone_logo.png")),
+                                    AssetImage("assets/images/logo.png")),
                           ),
                         ),
                         const SizedBox(
@@ -153,7 +154,9 @@ class _SmsVerificationScreenState extends State<SmsVerificationScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ButtonAuth("Tasdiqlash", true, () {})
+              ButtonAuth("Tasdiqlash", true, () {
+                Navigator.push(context,  MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
+              })
             ])));
   }
 }

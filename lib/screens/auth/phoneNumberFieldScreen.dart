@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shada_banking/screens/auth/smsVerificationScreen.dart';
 
 import '../../utils/phoneFormat.dart';
 import '../../widgets/auth/buttonAuth.dart';
@@ -34,7 +35,7 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                 const Center(
                     child: Image(
                         width: 100,
-                        image: AssetImage("assets/image/notify_icon.png"))),
+                        image: AssetImage("assets/images/logo.png"))),
                 const SizedBox(
                   height: 60,
                 ),
@@ -65,7 +66,10 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                ButtonAuth("Kodni yuoborish", true, () {}),
+                ButtonAuth("Kodni yuoborish", true, () {
+                  print("object");
+                  Navigator.push(context,  MaterialPageRoute(builder: (context) => const SmsVerificationScreen()));
+                }),
                 Flexible(flex: 2, child: Column()),
               ],
             )));

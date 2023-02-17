@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shada_banking/screens/auth/install_page.dart';
 import 'package:shada_banking/screens/auth/languageScreen.dart';
+import 'package:shada_banking/screens/auth/smsVerificationScreen.dart';
 import 'package:shada_banking/screens/payment/payment_page.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const InstallPage(),
+      home:  const SmsVerificationScreen(),
       routes: {
         InstallPage.route:(context)=>const InstallPage(),
         LanguageScreen.routes:(context)=>const LanguageScreen(),
