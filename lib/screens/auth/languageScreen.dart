@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/auth/phoneNumberFieldScreen.dart';
 
 class LanguageScreen extends StatefulWidget {
   static const routes = "Language";
@@ -26,11 +27,15 @@ class _LanguageScreenState extends State<LanguageScreen> {
           const SizedBox(
             height: 20,
           ),
-          button("O'zbekcha", () {}),
+          button("O'zbekcha", () {
+            Navigator.push(context,  MaterialPageRoute(builder: (context) => const PhoneNumberFieldScreen()));
+          }),
           const SizedBox(
             height: 20,
           ),
-          button("Русский", () {}),
+          button("Русский", () {
+            Navigator.push(context,  MaterialPageRoute(builder: (context) => const PhoneNumberFieldScreen()));
+          }),
           Flexible(flex: 2, child: Column()),
         ],
       ),
