@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/auth/screen_pin_code.dart';
 
 import '../../utils/phoneFormat.dart';
 
@@ -62,21 +63,26 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Container(
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff21ae7a),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  margin: const EdgeInsets.symmetric(horizontal: 20),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Center(
-                    child: Text(
-                      "Kodni yuborish",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,  MaterialPageRoute(builder: (context) => const PinCodeScreen()));
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                        color: Color(0xff21ae7a),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    child: const Center(
+                      child: Text(
+                        "Kodni yuborish",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
