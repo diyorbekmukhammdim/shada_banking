@@ -18,7 +18,7 @@ class AppKeyboard extends StatefulWidget {
 
 class _AppKeyboardState extends State<AppKeyboard> {
   String text = "";
-  static const double buttonSize = 120;
+  static const double buttonSize = 80;
 
   @override
   Widget build(BuildContext context) {

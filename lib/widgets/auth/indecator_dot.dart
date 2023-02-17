@@ -12,7 +12,7 @@ Widget pinCodeDot(bool status) {
       width: 30,
       child: Image.asset(
         "assets/images/abc_btn_switch_to_on_mtrl_00001.9.png",
-        color: Colors.blue,
+        color: Colors.green,
       ),
     );
   } else {
