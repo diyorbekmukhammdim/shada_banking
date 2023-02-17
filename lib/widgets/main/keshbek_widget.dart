@@ -4,8 +4,9 @@ class keshbekWidget extends StatelessWidget {
   String name;
   String count;
   int index;
+  IconData icon;
   int bottomindex;
-   keshbekWidget({Key? key,required this.name,required this.count,required this.index,required this.bottomindex}) : super(key: key);
+   keshbekWidget( {Key? key,required this.name,required this.count,required this.index,required this.bottomindex,required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +34,7 @@ class keshbekWidget extends StatelessWidget {
                   height: 60,
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child: Image.asset(
-                      "assets/images/hide.png",
+                    child: Icon(icon,
                       color: Colors.white,
                     ),
                   ),
