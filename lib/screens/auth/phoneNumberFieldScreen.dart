@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../utils/phoneFormat.dart';
+import '../../widgets/auth/buttonAuth.dart';
 
 class PhoneNumberFieldScreen extends StatefulWidget {
   const PhoneNumberFieldScreen({Key? key}) : super(key: key);
@@ -15,9 +17,7 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
   @override
   void initState() {
     controller.text = "+998";
-    controller.addListener(() {
-
-    });
+    controller.addListener(() {});
     super.initState();
   }
 
@@ -34,7 +34,7 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                 const Center(
                     child: Image(
                         width: 100,
-                        image: AssetImage("assets/images/logo_light.png"))),
+                        image: AssetImage("assets/image/notify_icon.png"))),
                 const SizedBox(
                   height: 60,
                 ),
@@ -48,11 +48,14 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: TextField(
                     maxLines: 1,
-                    keyboardType: TextInputType.phone,
+                    keyboardType: TextInputType.number,
                     controller: controller,
-                    inputFormatters: [UzbekCodeTextInputFormatter()],
+                    inputFormatters: [
+                      UzbekCodeTextInputFormatter(),
+                      LengthLimitingTextInputFormatter(17),
+                    ],
                     style: const TextStyle(
-                          color: Colors.black,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                     decoration: const InputDecoration.collapsed(
@@ -62,32 +65,15 @@ class _PhoneNumberFieldScreenState extends State<PhoneNumberFieldScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Container(
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff21ae7a),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  margin: const EdgeInsets.symmetric(horizontal: 20),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Center(
-                    child: Text(
-                      "Kodni yuborish",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
+                ButtonAuth("Kodni yuoborish", true, () {}),
                 Flexible(flex: 2, child: Column()),
               ],
             )));
   }
 
-// @override
-// void dispose() {
-//   controller.dispose();
-//   super.dispose();
-// }
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
