@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shada_banking/screens/auth/intro_page/intro_page.dart';
+import 'package:shada_banking/screens/auth/install_page.dart';
+import 'package:shada_banking/screens/payment/payment_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const IntroPage(),
+      home: const PaymentPage(),
     );
   }
 }
