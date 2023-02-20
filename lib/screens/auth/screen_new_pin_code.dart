@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/auth/intro_page/intro_page.dart';
+import 'package:shada_banking/screens/main/main_Screen.dart';
 import '../../widgets/auth/indecator_dot.dart';
 import '../../widgets/auth/keyboard.dart';
 
@@ -57,6 +59,7 @@ class _NewPinCodeScreenState extends State<NewPinCodeScreen> {
             ),
             AppKeyboard(stringValue: (value) {
               setState(() {});
+              if((value as String).length >= 4)  Navigator.push(context,  MaterialPageRoute(builder: (context) => const IntroPage()));
               return _pinCode = value;
             })
           ],

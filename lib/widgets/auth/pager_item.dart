@@ -46,7 +46,7 @@ class PagerItem extends StatelessWidget {
               width: 150,
               fit: BoxFit.contain,
             ),
-            const SizedBox(height: 70),
+            const SizedBox(height: 50),
             Container(
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
@@ -57,7 +57,7 @@ class PagerItem extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 )),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
           ],
         ),
       ],
