@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      home: const InstallPage(),
       routes: {
         InstallPage.route:(context)=>const InstallPage(),
         LanguageScreen.routes:(context)=>const LanguageScreen(),
