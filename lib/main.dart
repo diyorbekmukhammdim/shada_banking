@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shada_banking/screens/auth/install_page.dart';
 import 'package:shada_banking/screens/auth/languageScreen.dart';
 import 'package:shada_banking/screens/auth/smsVerificationScreen.dart';
+import 'package:shada_banking/screens/main/main_Screen.dart';
 import 'package:shada_banking/screens/more/more_bottomsheet.dart';
 import 'package:shada_banking/screens/payment/payment_page.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const InstallPage(),
+      home: const MainScreen(),
       routes: {
         InstallPage.route:(context)=>const InstallPage(),
         LanguageScreen.routes:(context)=>const LanguageScreen(),
