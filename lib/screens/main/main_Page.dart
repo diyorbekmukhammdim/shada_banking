@@ -158,7 +158,7 @@ class _MainPageState extends State<MainPage> {
                             height: 110,
                             decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(5.0),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,

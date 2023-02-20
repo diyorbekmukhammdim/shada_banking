@@ -62,14 +62,13 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-
         selectedItemColor: Colors.green.shade500,
         selectedIconTheme:IconThemeData(color: Colors.green.shade500) ,
         unselectedLabelStyle: TextStyle(color: Colors.red,fontSize: 13),
         selectedLabelStyle: TextStyle(color: Colors.yellow),
         type: BottomNavigationBarType.fixed,
           unselectedIconTheme: IconThemeData(color: Colors.grey),
-        elevation: 2,
+        elevation: 1,
         onTap: onTap,
         currentIndex: _selectedIndex,
         unselectedItemColor: Colors.black,
