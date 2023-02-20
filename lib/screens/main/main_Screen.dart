@@ -253,7 +253,7 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ),
                     Text(
-                      (eye) ? "• • • • • So'm" : "0 So'm",
+                      (eye) ? "• • • •So'm" : "0 So'm",
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
