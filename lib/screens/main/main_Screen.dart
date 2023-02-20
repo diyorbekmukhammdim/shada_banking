@@ -57,17 +57,34 @@ class _MainScreenState extends State<MainScreen> {
               Row(
                 children: [
                   keshbekWidget(
-                      name: "Keshbek", count: "0", index: 1,icon: Icons.account_circle,bottomindex: 3,),
+                    name: "Keshbek",
+                    count: "0",
+                    index: 1,
+                    icon: Icons.account_circle,
+                    bottomindex: 3,
+                  ),
                   keshbekWidget(
-                      name: "Jamg'arma", count: "0", index: 2,icon: Icons.account_balance_sharp, bottomindex: 4)
+                      name: "Jamg'arma",
+                      count: "0",
+                      index: 2,
+                      icon: Icons.account_balance_sharp,
+                      bottomindex: 4)
                 ],
               ),
               Row(
                 children: [
                   keshbekWidget(
-                      name: "Omonatlar", count: "0", bottomindex: 3,icon: Icons.account_balance_wallet_outlined, index: 1),
+                      name: "Omonatlar",
+                      count: "0",
+                      bottomindex: 3,
+                      icon: Icons.account_balance_wallet_outlined,
+                      index: 1),
                   keshbekWidget(
-                      name: "Kreditlar", count: "0", bottomindex: 4,icon: Icons.credit_card, index: 2)
+                      name: "Kreditlar",
+                      count: "0",
+                      bottomindex: 4,
+                      icon: Icons.credit_card,
+                      index: 2)
                 ],
               ),
             ]),
@@ -91,7 +108,20 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Center(
-                              child: Image.asset("assets/images/icon.jpeg"),
+                              child: Container(
+
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      "assets/images/icon.jpeg",
+                                    ),fit: BoxFit.fill
+                                  ),
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(50)
+                                ),
+                                height: 60,
+                                width: 60,
+                              ),
                             ),
                             SizedBox(
                               height: 15,
@@ -162,8 +192,9 @@ class _MainScreenState extends State<MainScreen> {
                                         borderRadius: BorderRadius.circular(80),
                                         image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/images/icon.jpeg"),fit: BoxFit.fill)),
-                                  width: 80,
+                                                "assets/images/icon.jpeg"),
+                                            fit: BoxFit.fill)),
+                                    width: 80,
                                     height: 100,
                                   ),
                                   valyuteColumn("Valyute", "Usd"),
@@ -192,7 +223,6 @@ class _MainScreenState extends State<MainScreen> {
           Text(
             name,
             style: TextStyle(fontWeight: FontWeight.bold),
-
           ),
           Text(
             name1,
@@ -257,7 +287,7 @@ class _MainScreenState extends State<MainScreen> {
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 35),
+                          fontSize: 25),
                     )
                   ],
                 ),
