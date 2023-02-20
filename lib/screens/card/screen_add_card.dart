@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/auth/intro_page/intro_page.dart';
 import 'package:shada_banking/widgets/auth/buttonAuth.dart';
 import 'package:shada_banking/widgets/card/CardNumberFormatter.dart';
 import 'package:shada_banking/widgets/card/DateFormatter.dart';
@@ -155,7 +156,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
           ),
           const Spacer(flex: 1,),
           ButtonAuth("Karta qo'shish", controllerName.text.isNotEmpty && controllerDate.text.length == 5 && controllerCard.text.length == 19, () {
-            print("Karta qo'shish");
+            //print("Karta qo'shish");
+            Navigator.push(context,  MaterialPageRoute(builder: (context) => const IntroPage()));
           }),
           const SizedBox(height: 15,)
         ],
