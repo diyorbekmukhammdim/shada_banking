@@ -56,6 +56,7 @@ class _SmsVerificationScreenState extends State<SmsVerificationScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: const Color(0xfff3f3f3),
             body: Column(children: [
               const SizedBox(

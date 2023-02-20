@@ -46,12 +46,14 @@ class _AddCardScreenState extends State<AddCardScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromARGB(228, 255, 254, 254),
       appBar: AppBar(
         title: const Text(
           "Karta qo'shish",
           maxLines: 1,
-          style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
+          style: TextStyle(
+              color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
         ),
         centerTitle: true,
         actions: [
@@ -61,7 +63,10 @@ class _AddCardScreenState extends State<AddCardScreen> {
             },
             child: const Text(
               "Yopish",
-              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
           ),
           const SizedBox(
@@ -94,12 +99,42 @@ class _AddCardScreenState extends State<AddCardScreen> {
                 });
               },
               children: [
-                cardItem("assets/images/ic_card_background_0.png", icon, controllerName.text, controllerCard.text, controllerDate.text),
-                cardItem("assets/images/ic_card_background_1.png", icon, controllerName.text, controllerCard.text, controllerDate.text),
-                cardItem("assets/images/ic_card_background_2.png", icon, controllerName.text, controllerCard.text, controllerDate.text),
-                cardItem("assets/images/ic_card_background_3.png", icon, controllerName.text, controllerCard.text, controllerDate.text),
-                cardItem("assets/images/ic_card_background_4.png", icon, controllerName.text, controllerCard.text, controllerDate.text),
-                cardItem("assets/images/ic_card_background_5.png", icon, controllerName.text, controllerCard.text, controllerDate.text),
+                cardItem(
+                    "assets/images/ic_card_background_0.png",
+                    icon,
+                    controllerName.text,
+                    controllerCard.text,
+                    controllerDate.text),
+                cardItem(
+                    "assets/images/ic_card_background_1.png",
+                    icon,
+                    controllerName.text,
+                    controllerCard.text,
+                    controllerDate.text),
+                cardItem(
+                    "assets/images/ic_card_background_2.png",
+                    icon,
+                    controllerName.text,
+                    controllerCard.text,
+                    controllerDate.text),
+                cardItem(
+                    "assets/images/ic_card_background_3.png",
+                    icon,
+                    controllerName.text,
+                    controllerCard.text,
+                    controllerDate.text),
+                cardItem(
+                    "assets/images/ic_card_background_4.png",
+                    icon,
+                    controllerName.text,
+                    controllerCard.text,
+                    controllerDate.text),
+                cardItem(
+                    "assets/images/ic_card_background_5.png",
+                    icon,
+                    controllerName.text,
+                    controllerCard.text,
+                    controllerDate.text),
               ],
             ),
           ),
@@ -121,22 +156,33 @@ class _AddCardScreenState extends State<AddCardScreen> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               "Karta raqami",
-              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             width: double.infinity,
-            decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(10))),
             child: TextField(
               maxLines: 1,
               // maxLength: 16,
               keyboardType: TextInputType.number,
               controller: controllerCard,
               inputFormatters: [CardNumberFormatter()],
-              style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
-              decoration: const InputDecoration.collapsed(hintText: "Karta raqami", border: InputBorder.none, hintStyle: TextStyle(color: Colors.grey, fontSize: 15)),
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+              decoration: const InputDecoration.collapsed(
+                  hintText: "Karta raqami",
+                  border: InputBorder.none,
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 15)),
             ),
           ),
           const SizedBox(
@@ -155,19 +201,33 @@ class _AddCardScreenState extends State<AddCardScreen> {
                       const Text(
                         "Amal qilish muddati",
                         maxLines: 1,
-                        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
                         width: 80,
-                        decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
                         child: TextField(
                           maxLines: 1,
                           keyboardType: TextInputType.number,
                           controller: controllerDate,
                           inputFormatters: [DateFormatter()],
-                          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
-                          decoration: const InputDecoration.collapsed(hintText: "OO/YY", border: InputBorder.none, hintStyle: TextStyle(color: Colors.grey, fontSize: 15)),
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                          decoration: const InputDecoration.collapsed(
+                              hintText: "OO/YY",
+                              border: InputBorder.none,
+                              hintStyle:
+                                  TextStyle(color: Colors.grey, fontSize: 15)),
                         ),
                       ),
                     ],
@@ -181,19 +241,33 @@ class _AddCardScreenState extends State<AddCardScreen> {
                       const Text(
                         "Karta nomi",
                         maxLines: 1,
-                        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
                         width: double.infinity,
-                        decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
                         child: TextField(
                           maxLines: 1,
                           keyboardType: TextInputType.text,
                           controller: controllerName,
                           inputFormatters: [NameFormatter()],
-                          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
-                          decoration: const InputDecoration.collapsed(hintText: "Karta nomi", border: InputBorder.none, hintStyle: TextStyle(color: Colors.grey, fontSize: 15)),
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                          decoration: const InputDecoration.collapsed(
+                              hintText: "Karta nomi",
+                              border: InputBorder.none,
+                              hintStyle:
+                                  TextStyle(color: Colors.grey, fontSize: 15)),
                         ),
                       ),
                     ],
@@ -213,7 +287,10 @@ class _AddCardScreenState extends State<AddCardScreen> {
                 const Text(
                   "Asosiy karta",
                   maxLines: 1,
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
                 ),
                 CustomSwitch(
                   initialValue: true,
@@ -227,12 +304,18 @@ class _AddCardScreenState extends State<AddCardScreen> {
           const Spacer(
             flex: 1,
           ),
-
-          ButtonAuth("Karta qo'shish", controllerName.text.isNotEmpty && controllerDate.text.length == 5 && controllerCard.text.length == 19, () {
+          ButtonAuth(
+              "Karta qo'shish",
+              controllerName.text.isNotEmpty &&
+                  controllerDate.text.length == 5 &&
+                  controllerCard.text.length == 19, () {
             //print("Karta qo'shish");
-            Navigator.push(context,  MaterialPageRoute(builder: (context) => const IntroPage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const IntroPage()));
           }),
-          const SizedBox(height: 15,)
+          const SizedBox(
+            height: 15,
+          )
         ],
       ),
     ));
