@@ -5,6 +5,7 @@ import 'package:shada_banking/screens/main/homepage.dart';
 import 'package:shada_banking/screens/main/main_Page.dart';
 import 'package:shada_banking/screens/main/search.dart';
 import 'package:shada_banking/screens/payment/payment_page.dart';
+import 'package:shada_banking/screens/xabarlar/screen_xabarlar.dart';
 import 'package:shada_banking/widgets/main/keshbek_widget.dart';
 import 'package:shada_banking/widgets/main/savepement.dart';
 
@@ -41,7 +42,9 @@ class _MainScreenState extends State<MainScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,  MaterialPageRoute(builder: (context) => const XabarlarScreen()));
+              },
               icon: const Icon(
                 Icons.menu,
                 color: Colors.green,
