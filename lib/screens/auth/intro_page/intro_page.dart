@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/main/main_Screen.dart';
 import '../../../widgets/auth/pager_item.dart';
 import 'model/intro_model.dart';
 
@@ -85,9 +86,14 @@ class _IntroPageState extends State<IntroPage> {
                   ),
                 ),
                 const Spacer(),
-                const Text("O'tkazib yuborish",
-                    textAlign: TextAlign.end,
-                    style: TextStyle(fontSize: 16, color: Color(0xFFFBF8FC)))
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,  MaterialPageRoute(builder: (context) => const MainScreen()));
+                  },
+                  child: const Text("O'tkazib yuborish",
+                      textAlign: TextAlign.end,
+                      style: TextStyle(fontSize: 16, color: Color(0xFFFBF8FC))),
+                )
               ],
             ))
       ],
