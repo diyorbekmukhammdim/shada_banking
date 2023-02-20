@@ -39,31 +39,23 @@ class keshbekWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:  [
-                      Text(
-                        name,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13),
-                      ),
-                      Text(
-                        count,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      Text(
-                        "so'm",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                    ],
+                SizedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children:  [
+                        Text(
+                          "${name}\n${count}\nso'm",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13),
+                        ),
+
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
