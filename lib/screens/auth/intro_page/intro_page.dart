@@ -50,12 +50,6 @@ class _IntroPageState extends State<IntroPage> {
   }
 
   @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
@@ -98,5 +92,11 @@ class _IntroPageState extends State<IntroPage> {
             ))
       ],
     ));
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
   }
 }

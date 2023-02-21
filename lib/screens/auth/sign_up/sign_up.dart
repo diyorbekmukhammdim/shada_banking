@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shada_banking/screens/auth/screen_new_pin_code.dart';
 import '../../../widgets/auth/logo.dart';
 
 
@@ -112,7 +113,9 @@ class _SignUpState extends State<SignUp> {
                     style: ElevatedButton.styleFrom(
                       splashFactory: NoSplash.splashFactory
                     ),
-                      onPressed: isFirstTextFieldEmpty && isSecondTextFieldEmpty ? null : () {},
+                      onPressed: isFirstTextFieldEmpty && isSecondTextFieldEmpty ? null : () {
+                        Navigator.push(context,  MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
+                      },
                     focusNode: FocusNode(),
                       child: const Text("Davom ettirish", style: TextStyle(color: Colors.white),),
                   ),
