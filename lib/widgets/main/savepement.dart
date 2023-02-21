@@ -10,17 +10,17 @@ final String name;
       onTap: () {},
       child: Padding(
         padding: const EdgeInsets.only(
-            left: 14.0, bottom: 20, top: 10, right: 12),
+            left: 14.0, bottom: 5, top: 10, right: 12),
         child: Row(
           children: [
             Text(
               name,
-              style: TextStyle(fontSize: 18,color: Colors.grey),
+              style: TextStyle(fontSize: 13,color: Colors.grey),
             ),
             Spacer(),
             Text(
               "Barchasi",
-              style: TextStyle(fontSize: 15,color: Colors.grey),
+              style: TextStyle(fontSize: 12,color: Colors.grey),
             ),
           ],
         ),

@@ -15,9 +15,17 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    var name = [
+      ["Keshbek", "Jamg'arma", "Omonatlar", "Kreditlar"],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+      ],
+    ];
     return Scaffold(
       backgroundColor: const Color(0xFFDFDFDF),
-
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -29,41 +37,19 @@ class _MainPageState extends State<MainPage> {
                 card_Item(),
               ],
             ),
-            Column(children: [
-              Row(
-                children: [
-                  keshbekWidget(
-                    name: "Keshbek",
-                    count: "0",
-                    index: 1,
-                    icon: Icons.account_circle,
-                    bottomindex: 3,
-                  ),
-                  keshbekWidget(
-                      name: "Jamg'arma",
-                      count: "0",
-                      index: 2,
-                      icon: Icons.account_balance_sharp,
-                      bottomindex: 4)
-                ],
-              ),
-              Row(
-                children: [
-                  keshbekWidget(
-                      name: "Omonatlar",
-                      count: "0",
-                      bottomindex: 3,
-                      icon: Icons.account_balance_wallet_outlined,
-                      index: 1),
-                  keshbekWidget(
-                      name: "Kreditlar",
-                      count: "0",
-                      bottomindex: 4,
-                      icon: Icons.credit_card,
-                      index: 2)
-                ],
-              ),
-            ]),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.25,
+              child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, childAspectRatio: 2),
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return keshbekWidget(
+                        name: name[0][index],
+                        count: name[1][index],
+                        icon: Icons.add, index: index,);
+                  }),
+            ),
             const SavePayment(name: "Takliflar"),
             SizedBox(
               height: 170,
@@ -78,23 +64,22 @@ class _MainPageState extends State<MainPage> {
                         height: 180,
                         width: 120,
                         decoration: BoxDecoration(
-                            color: Color(0xFF64BD94),
-                            borderRadius: BorderRadius.circular(20)),
+
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(image: AssetImage("assets/images/banner_big_bg.png"),fit: BoxFit.fill)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Center(
                               child: Container(
-
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(
                                           "assets/images/icon.jpeg",
-                                        ),fit: BoxFit.fill
-                                    ),
+                                        ),
+                                        fit: BoxFit.fill),
                                     color: Colors.black,
-                                    borderRadius: BorderRadius.circular(50)
-                                ),
+                                    borderRadius: BorderRadius.circular(50)),
                                 height: 60,
                                 width: 60,
                               ),
@@ -198,11 +183,14 @@ class _MainPageState extends State<MainPage> {
         children: [
           Text(
             name,
-            style: TextStyle(fontWeight: FontWeight.normal,fontSize: 15,color: Colors.black),
+            style: TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: 15,
+                color: Colors.black),
           ),
           Text(
             name1,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ],
       ),
@@ -217,8 +205,8 @@ class _MainPageState extends State<MainPage> {
           width: double.infinity,
           height: 170,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: const Color(0xFF64BD94)),
+              borderRadius: BorderRadius.circular(13),
+              image: DecorationImage(image: AssetImage("assets/images/virtual_top_bg.png"),fit: BoxFit.fill)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -247,15 +235,15 @@ class _MainPageState extends State<MainPage> {
                         },
                         icon: (eye)
                             ? Image.asset(
-                          "assets/images/hide.png",
-                          height: 30,
-                          color: Colors.white,
-                        )
+                                "assets/images/hide.png",
+                                height: 30,
+                                color: Colors.white,
+                              )
                             : const Icon(
-                          Icons.remove_red_eye_outlined,
-                          color: Colors.white,
-                          size: 30,
-                        ),
+                                Icons.remove_red_eye_outlined,
+                                color: Colors.white,
+                                size: 30,
+                              ),
                       ),
                     ),
                     Text(
@@ -315,7 +303,8 @@ class _MainPageState extends State<MainPage> {
         height: 180,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: const Color(0xFF64BD94)),
+            color: const Color(0xFF64BD94),
+            image: DecorationImage(image: AssetImage("assets/images/virtual_top_bg.png"),fit: BoxFit.fill))
       ),
     );
   }

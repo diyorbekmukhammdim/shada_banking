@@ -45,31 +45,6 @@ class _PaymentPageState extends State<PaymentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: background,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Icon(
-          Icons.menu,
-          color: iconsColor,
-        ),
-        actions: <Widget>[
-          Padding(
-              padding: const EdgeInsets.all(10),
-              child: Icon(
-                Icons.notifications_none,
-                color: notifyColor,
-              )),
-        ],
-        title: CupertinoSearchTextField(
-          suffixIcon: const Icon(Icons.search),
-          prefixIcon: const Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20)),
-        ),
-      ),
       body: Column(
         children: [
           const Text("Barcha servislar"),

@@ -1,9 +1,8 @@
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shada_banking/screens/main/Build.dart';
-import 'package:shada_banking/screens/main/homepage.dart';
+
 import 'package:shada_banking/screens/main/main_Page.dart';
-import 'package:shada_banking/screens/main/search.dart';
 import 'package:shada_banking/screens/payment/payment_page.dart';
 import 'package:shada_banking/widgets/main/keshbek_widget.dart';
 import 'package:shada_banking/widgets/main/savepement.dart';
@@ -20,12 +19,14 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final background = const Color.fromARGB(255, 244, 244, 244);
+    final iconsColor = const Color.fromARGB(255, 58, 172, 136);
+    final notifyColor = const Color.fromARGB(255, 44, 127, 172);
     List pages = [
       MainPage(),
       PaymentPage(),
-      SeachsPage(),
-      BuildPage(),
-      HomePage(),
+
+
     ];
     void onTap(int index) {
       setState(() {
@@ -35,7 +36,31 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       body: pages[_selectedIndex],
-      appBar: AppBar(
+      appBar: (_selectedIndex==1)?AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Icon(
+          Icons.menu,
+          color: iconsColor,
+        ),
+        actions: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(10),
+              child: Icon(
+                Icons.notifications_none,
+                color: notifyColor,
+              )),
+        ],
+        title: CupertinoSearchTextField(
+          suffixIcon: const Icon(Icons.search),
+          prefixIcon: const Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(20)),
+        ),
+      ):AppBar(
         backgroundColor: const Color(0xFFDFDFDF),
         actions: [
           Padding(
