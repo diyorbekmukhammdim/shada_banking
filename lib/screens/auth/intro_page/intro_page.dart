@@ -1,5 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:shada_banking/app/app_images.dart';
+import 'package:shada_banking/app/app_strings.dart';
 import 'package:shada_banking/screens/main/main_Screen.dart';
 import '../../../widgets/auth/pager_item.dart';
 import 'model/intro_model.dart';
@@ -13,28 +15,10 @@ class IntroPage extends StatefulWidget {
 
 class _IntroPageState extends State<IntroPage> {
   var introData = List.of({
-    IntroModel(
-        title: "Virtual karta oching!",
-        icon: "assets/images/ic_order_virtual_card.png",
-        text: "Identifikatsiyadan o'ting va ilovamiz orqali qisqa muddatda "
-            "VISA va HUMO virtual kartalariga ega bo'ling.\n\nVISA Virtual - Online to'lovlar va konversiya operatsiyalarini "
-            "amalga oshirish uchun cheksiz imkoniyat. 3D-secure xizmati avtomatik ravishda faollashtiriladi.\n\n"
-            "HUMO Virtual - Oddiy va xavfsiz online to'lovlar hamda HUMOPay xizmati orqali kontaktsiz to'lov imkoniyati."),
-    IntroModel(
-        title: "OTM shartnoma to'lovi",
-        icon: "assets/images/intro_woman.png",
-        text: "ZOOMRAD ilovasida O'zbekiston oliy ta'lim muassasalari "
-            "shartnoma to'lovlarini oson va komissiyasiz amalga oshiring. Buning uchun siz talabaning faqat JSHSHIR (PINFL) "
-            "raqamini kiritishingiz kerak va ilovaning o'zi talaba va shartnoma bo'yicha qarzdorlik haqida ma'lumot topadi."),
-    IntroModel(
-        title: "Onlayn davlat xizmatlari",
-        icon: "assets/images/ic_my_gov_white.png",
-        text: "Identifikatsiyadan o'ting va davlat xizmatlaridan "
-            "onlayn tarzda bepul doydalaning."),
-    IntroModel(
-        title: "VISA Direct",
-        icon: "assets/images/icon_visa_direct.png",
-        text: "VISA kartalari orqali xalqaro pul o'tkazmalari."),
+    IntroModel(title: AppStrings.virtualCardTitle, icon: AppImages.orderVirtualCard, text: AppStrings.virtualCardDesc),
+    IntroModel(title: AppStrings.otmContractTitle, icon: AppImages.introWoman, text: AppStrings.otmContractDesc),
+    IntroModel(title: AppStrings.onlineCountryServiceTitle, icon: AppImages.myGovWhite, text: AppStrings.onlineCountryServiceDesc),
+    IntroModel(title: AppStrings.visaDirectTitle, icon: AppImages.visaDirect, text: AppStrings.visaDirectDesc),
   });
 
   final pageController = PageController();
@@ -75,18 +59,15 @@ class _IntroPageState extends State<IntroPage> {
                     activeColor: const Color(0xFF037465),
                     size: const Size.square(10.0),
                     activeSize: const Size(24.0, 12.0),
-                    activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
+                    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                   ),
                 ),
                 const Spacer(),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.push(context,  MaterialPageRoute(builder: (context) => const MainScreen()));
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MainScreen()));
                   },
-                  child: const Text("O'tkazib yuborish",
-                      textAlign: TextAlign.end,
-                      style: TextStyle(fontSize: 16, color: Color(0xFFFBF8FC))),
+                  child: const Text("O'tkazib yuborish", textAlign: TextAlign.end, style: TextStyle(fontSize: 16, color: Color(0xFFFBF8FC))),
                 )
               ],
             ))

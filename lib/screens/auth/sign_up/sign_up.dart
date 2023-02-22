@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shada_banking/screens/auth/screen_new_pin_code.dart';
 import '../../../widgets/auth/logo.dart';
 
-
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -110,14 +109,17 @@ class _SignUpState extends State<SignUp> {
                   decoration: BoxDecoration(
                       color: isFirstTextFieldEmpty || isSecondTextFieldEmpty ? Colors.grey : Colors.green, borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
-                    style: ElevatedButton.styleFrom(
-                      splashFactory: NoSplash.splashFactory
-                    ),
-                      onPressed: isFirstTextFieldEmpty && isSecondTextFieldEmpty ? null : () {
-                        Navigator.push(context,  MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
-                      },
+                    style: ElevatedButton.styleFrom(splashFactory: NoSplash.splashFactory),
+                    onPressed: isFirstTextFieldEmpty && isSecondTextFieldEmpty && firstController.text == secondController.text
+                        ? null
+                        : () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
+                          },
                     focusNode: FocusNode(),
-                      child: const Text("Davom ettirish", style: TextStyle(color: Colors.white),),
+                    child: const Text(
+                      "Davom ettirish",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ))
               ])

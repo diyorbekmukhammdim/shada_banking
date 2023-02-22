@@ -38,22 +38,22 @@ class PagerItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(model.title,
-                style: const TextStyle(color: Colors.white, fontSize: 24)),
-            const SizedBox(height: 70),
+                style: const TextStyle(color: Colors.white, fontSize: 18)),
+            const SizedBox(height: 50),
             Image.asset(
               model.icon,
-              height: 150,
-              width: 150,
+              height: 130,
+              width: 130,
               fit: BoxFit.contain,
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
             Container(
-                margin: const EdgeInsets.symmetric(horizontal: 30),
+                margin: const EdgeInsets.symmetric(horizontal: 18),
                 child: Text(
                   model.text,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                   textAlign: TextAlign.center,
                 )),
