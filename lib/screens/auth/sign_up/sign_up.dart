@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shada_banking/widgets/auth/password_text_field.dart';
 import '../../../widgets/auth/logo.dart';
-import '../../../widgets/dialog/custom_dialog.dart';
+import '../screen_new_pin_code.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -27,6 +27,7 @@ class _SignUpState extends State<SignUp> {
               const Logo(),
               const SizedBox(height: 50),
               PasswordTextField(
+                hintText: "Yangi parolni kiriting",
                 password: (password) {
                   _isFirstTextFieldText = password;
                   setState(() {});
@@ -35,7 +36,9 @@ class _SignUpState extends State<SignUp> {
                 },
               ),
               const SizedBox(height: 30),
-              PasswordTextField(password: (password) {
+              PasswordTextField(
+                  hintText: "Yangi parolni takrorlang",
+                  password: (password) {
                 _isSecondTextFieldText = password;
                 setState(() {});
                 print("screen: $password");
@@ -58,11 +61,9 @@ class _SignUpState extends State<SignUp> {
                     onPressed: _isFirstTextFieldText == _isSecondTextFieldText &&
                         _isFirstTextFieldText.length == 6 && _isSecondTextFieldText.length == 6
                         ? () {
-                            customDialog(context, "Internetga ulanishda muammo, ulanishni tekshiring", "assets/images/no_internet.png", "Yangilash",
-                                () => {Navigator.of(context).pop()});
-                            print(_isFirstTextFieldText);
-                            print(_isSecondTextFieldText);
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
+                            // customDialog(context, "Internetga ulanishda muammo, ulanishni tekshiring", "assets/images/no_internet.png", "Yangilash",
+                            //     () => {Navigator.of(context).pop()});
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
                           }
                         : null,
                     focusNode: FocusNode(),
