@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shada_banking/screens/auth/screen_new_pin_code.dart';
-import 'package:shada_banking/screens/auth/sign_up/sign_up.dart';
 
 import '../../widgets/auth/buttonAuth.dart';
 
@@ -56,7 +55,6 @@ class _SmsVerificationScreenState extends State<SmsVerificationScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            resizeToAvoidBottomInset: false,
             backgroundColor: const Color(0xfff3f3f3),
             body: Column(children: [
               const SizedBox(
@@ -157,7 +155,7 @@ class _SmsVerificationScreenState extends State<SmsVerificationScreen> {
                 height: 20,
               ),
               ButtonAuth("Tasdiqlash", true, () {
-                Navigator.push(context,  MaterialPageRoute(builder: (context) => const SignUp()));
+                Navigator.push(context,  MaterialPageRoute(builder: (context) => const NewPinCodeScreen()));
               })
             ])));
   }
