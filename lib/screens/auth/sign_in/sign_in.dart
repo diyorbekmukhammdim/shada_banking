@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shada_banking/widgets/auth/logo.dart';
+import 'package:shada_banking/widgets/auth/password_text_field.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -9,20 +10,10 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  var firstController = TextEditingController();
-  bool _isFirstHidden = true;
-  var isFirstTextFieldEmpty = true;
+  String _passwordTextField = "";
 
   @override
   void initState() {
-    firstController.addListener(() {
-      if (firstController.text.isNotEmpty) {
-        isFirstTextFieldEmpty = false;
-      } else {
-        isFirstTextFieldEmpty = true;
-      }
-      setState(() {});
-    });
     super.initState();
   }
 
@@ -38,40 +29,24 @@ class _SignInState extends State<SignIn> {
               const SizedBox(height: 50),
               const Logo(),
               const SizedBox(height: 50),
-              Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: Colors.white),
-                child: TextField(
-                  maxLines: 1,
-                  obscureText: _isFirstHidden,
-                  cursorColor: Colors.green,
-                  textAlign: TextAlign.center,
-                  controller: firstController,
-                  decoration: InputDecoration(
-                      suffixIcon: IconButton(
-                        focusColor: Colors.green,
-                        onPressed: () {
-                          setState(() {
-                            _isFirstHidden = !_isFirstHidden;
-                          });
-                        },
-                        icon: _isFirstHidden
-                            ? const Icon(Icons.visibility_off, color: Colors.green)
-                            : const Icon(Icons.visibility, color: Colors.green),
-                      ),
-                      hintText: "Parolni kiriting",
-                      hintStyle: const TextStyle(color: Colors.grey),
-                      border: const OutlineInputBorder(borderSide: BorderSide.none)),
-                ),
-              ),
+              PasswordTextField(hintText: "Parolni kiriting", password: (password){
+                _passwordTextField = password;
+                setState(() {});
+              }),
               const SizedBox(height: 30),
               Row(children: [
                 Expanded(
                     child: Container(
                   height: 50,
-                  decoration: BoxDecoration(color: isFirstTextFieldEmpty ? Colors.grey : Colors.green, borderRadius: BorderRadius.circular(15)),
+                  decoration: BoxDecoration(
+                      color: _passwordTextField.isNotEmpty && _passwordTextField.length == 6 ?
+                  Colors.green : Colors.grey,
+                      borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                     style: ElevatedButton.styleFrom(splashFactory: NoSplash.splashFactory),
-                    onPressed: isFirstTextFieldEmpty ? null : () {},
+                    onPressed: _passwordTextField.length == 6 ? () {
+                      //keyingi oyna ochilishi shu joyda yoziladi
+                    } : null,
                     focusNode: FocusNode(),
                     child: const Text(
                       "Davom ettirish",
@@ -81,7 +56,7 @@ class _SignInState extends State<SignIn> {
                 ))
               ]),
               const SizedBox(height: 50),
-              const Text("Parolni unutdingizmi?", style: TextStyle(color: Colors.green, fontSize: 18, fontWeight: FontWeight.w500),)
+              const Text("Parolni unutdingizmi?", style: TextStyle(color: Colors.green, fontSize: 16, fontWeight: FontWeight.w500),)
             ],
           ),
         ),

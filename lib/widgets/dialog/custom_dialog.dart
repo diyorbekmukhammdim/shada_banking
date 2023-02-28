@@ -12,7 +12,7 @@ Future<void> customDialog(BuildContext context, String text, String imagePath, S
             color: Colors.white,
           ),
           margin: const EdgeInsets.all(20),
-          padding: const EdgeInsets.only(top: 30, right: 16, left: 16, bottom: 40),
+          padding: const EdgeInsets.only(top: 30, right: 24, left: 24, bottom: 40),
           height: 400,
           child: Column(
             children: [
